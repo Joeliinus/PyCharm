@@ -1,0 +1,21 @@
+import pygame
+pygame.init()
+
+screen = pygame.display.set_mode([300, 300])
+pygame.display.set_caption("Lumemees – Joel Riive")
+screen.fill([0, 0, 0])
+
+pygame.draw.circle(screen, [255, 255, 255], [150, 60], 25)
+pygame.draw.circle(screen, [255, 255, 255], [150, 115], 35)
+pygame.draw.circle(screen, [255, 255, 255], [150, 190], 45)
+pygame.draw.circle(screen, [0, 0, 0], [142, 55], 4)
+pygame.draw.circle(screen, [0, 0, 0], [158, 55], 4)
+pygame.draw.polygon(screen, [255, 0, 0], [[146, 65], [154, 65], [150, 77]])
+
+pygame.display.flip()
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
