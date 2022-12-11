@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637955ae-b964-4cbd-a4de-de2fbbba89c5" name="Changes" comment="" />
+    <list default="true" id="637955ae-b964-4cbd-a4de-de2fbbba89c5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/desktop-tutorial.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/desktop-tutorial.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +37,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/desktop-tutorial/PyGame ÜL 2 Tekstide ja piltide kasutamine.py&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/PyCharm&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
@@ -46,7 +50,7 @@
       <recent name="C:\Users\user\PycharmProjects\desktop-tutorial" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager">
     <configuration name="OOP" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="desktop-tutorial" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,9 +97,6 @@
       <module name="desktop-tutorial" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
