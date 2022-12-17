@@ -43,7 +43,7 @@ posX = 0
 posY = screenY / 1.5
 speedX = 0.1
 posZ, posQ = 69, 289
-speedZ, speedQ = 0.2, 0.2
+speedZ, speedQ = 0.15, 0.15
 
 # sulgemine hiirega
 while True:
