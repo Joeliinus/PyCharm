@@ -35,10 +35,9 @@ lBlue = [153, 204, 255]
 screen.fill(lBlue)
 
 alus = pygame.image.load("pad.png")
+alus = pygame.transform.rotate(alus, 180)
 
 # sulgemine hiirega
-pygame.display.flip()
-
 while True:
     sisend = pygame.event.poll()
     if sisend.type == pygame.QUIT:
