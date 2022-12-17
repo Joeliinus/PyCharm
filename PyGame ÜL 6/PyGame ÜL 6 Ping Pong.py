@@ -27,13 +27,12 @@ import pygame
 import sys
 pygame.init()
 
-# ekraani seaded
 screenX = 640
 screenY = 480
-screen = pygame.display.set_mode([screenX, screenY])
+ekraan = pygame.display.set_mode([screenX, screenY])
 pygame.display.set_caption("Ping Pong")
 lBlue = [153, 204, 255]
-screen.fill(lBlue)
+ekraan.fill(lBlue)
 
 pall = pygame.image.load("ball.png")
 pall = pygame.transform.scale(pall, [20, 20])
@@ -45,20 +44,15 @@ speedX = 0.1
 posZ, posQ = 69, 289
 speedZ, speedQ = 0.15, 0.15
 
-# sulgemine hiirega
 while True:
     sisend = pygame.event.poll()
     if sisend.type == pygame.QUIT:
         sys.exit()
 
-    screen.blit(alus, (posX, posY))
-    screen.blit(pall, (posZ, posQ))
-
     posX += speedX
     posZ += speedZ
     posQ += speedQ
 
-    # kui puudub ääri, siis muudab suunda
     if posX > screenX-alus.get_rect().width or posX < 0:
         speedX = -speedX
 
@@ -68,5 +62,11 @@ while True:
     if posQ > screenY-pall.get_rect().width or posQ < 0:
         speedQ = -speedQ
 
+    alus_kast = ekraan.blit(alus, (posX, posY))
+    pall_kast = ekraan.blit(pall, (posZ, posQ))
+
+    if pall_kast.colliderect(alus_kast) and speedZ > 0:
+        speedQ = -speedQ
+
     pygame.display.flip()
-    screen.fill(lBlue)
+    ekraan.fill(lBlue)
