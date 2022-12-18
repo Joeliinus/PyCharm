@@ -19,6 +19,7 @@ pygame.display.set_caption("Ping Pong")
 lBlue = [153, 204, 255]
 ekraan.fill(lBlue)
 skoor = 0
+kell = pygame.time.Clock()
 
 pall = pygame.image.load("ball.png")
 pall = pygame.transform.scale(pall, [20, 20])
@@ -26,9 +27,10 @@ alus = pygame.image.load("pad.png")
 alus = pygame.transform.scale(alus, [120, 20])
 posX = 2
 posY = screenY / 1.5
-speedX = 0.3
+speedX = 0.2
 posZ, posQ = 69, 289
-speedZ, speedQ = 0.5, 0.5
+speedZ, speedQ = 7, 7
+alus_kiirus = 2
 
 pygame.mixer.music.load('happy.mp3')
 pygame.mixer.music.play(0)
@@ -38,9 +40,12 @@ log_hit = pygame.mixer.Sound('rock-hitting-log.wav')
 end_sound = pygame.mixer.Sound('game-over.wav')
 
 while True:
+    dt = kell.tick(30)
+
     sisend = pygame.event.poll()
-    if sisend.type == pygame.QUIT:
-        sys.exit()
+    for sisend in pygame.event.get():
+        if sisend.type == pygame.QUIT:
+            sys.exit()
 
     posX += speedX
     posZ += speedZ
@@ -58,9 +63,11 @@ while True:
         speedQ = -speedQ
         pygame.mixer.Sound.play(hit_sound)
 
-    if posQ > screenY-pall.get_rect().width:
-        speedQ = -speedQ
+    if posQ > screenY-pall.get_rect().width-100:
         pygame.mixer.Sound.play(end_sound)
+
+    if posQ > screenY-pall.get_rect().width:
+        sys.exit()
 
     aluse_kast = ekraan.blit(alus, (posX, posY))
     pall_kast = ekraan.blit(pall, (posZ, posQ))
@@ -79,6 +86,16 @@ while True:
 
     if posQ > 460:
         skoor -= 1
+
+    vajutatud = pygame.key.get_pressed()
+    if vajutatud[pygame.K_LEFT]:
+        speedX = -alus_kiirus
+    elif vajutatud[pygame.K_RIGHT]:
+        speedX = alus_kiirus
+    else:
+        speedX = 0
+
+    posX += speedX * dt
 
     pygame.display.flip()
     ekraan.fill(lBlue)
