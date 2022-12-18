@@ -30,6 +30,9 @@ speedX = 0.3
 posZ, posQ = 69, 289
 speedZ, speedQ = 0.5, 0.5
 
+pygame.mixer.music.load('happy.mp3')
+pygame.mixer.music.play(0)
+
 while True:
     sisend = pygame.event.poll()
     if sisend.type == pygame.QUIT:
