@@ -71,13 +71,14 @@ while True:
     aluse_kast = ekraan.blit(alus, (posX, posY))
     pall_kast = ekraan.blit(pall, (posZ, posQ))
 
-    font = pygame.font.Font(pygame.font.match_font('comic sans'), 16)
+    font = pygame.font.Font(pygame.font.match_font('Impact'), 20)
     skoortekst = font.render("Punktid: " + str(skoor), True, [102, 0, 51])
-    ekraan.blit(skoortekst, [535, 20])
+    ekraan.blit(skoortekst, [530, 20])
 
     if pall_kast.colliderect(aluse_kast) and posQ > 0:
         speedQ = -speedQ
         skoor += 4
+        pygame.mixer.Sound.play(hit_sound)
 
     if pall_kast.colliderect(aluse_kast) and speedQ > 0.2:
         speedQ = -speedQ
