@@ -38,8 +38,8 @@ directionX, directionY = 0, 0   # määrab directionX-i väärtuseks 0 ja direct
 pygame.mixer.music.load('happy.mp3')   # laeb sisse muusika
 pygame.mixer.music.play(0)   # mängib sisse laetud muusikat
 pygame.mixer.music.set_volume(0.5)   # muudab heli tugevust
-hit_sound = pygame.mixer.Sound('jump.ogg')   # tekitad heliobjekti hit_sound
-end_sound = pygame.mixer.Sound('game-over.wav')   # tekitad heliobjekti end_sound
+porke_heli = pygame.mixer.Sound('jump.ogg')   # tekitad heliobjekti hit_sound
+lopu_heli = pygame.mixer.Sound('game-over.wav')   # tekitad heliobjekti end_sound
 log_hit = pygame.mixer.Sound('rock-hitting-log.wav')   # tekitad heliobjekti log_hit
 
 # AKENT LAHTI HOIDEV PÕHITSÜKKEL
@@ -55,51 +55,58 @@ while True:
     posZ += speedZ   # posZ suureneb speedZ võrra
     posQ += speedQ   # posQ suureneb speedQ võrra
 
-    aluse_kast = ekraan.blit(alus, (posX, posY))   # määrab alusele tema pindala suuruse kasti ja algpositsioonid
-    pall_kast = ekraan.blit(pall, (posZ, posQ))   # määrab pallile tema pindala suuruse kasti ja algpositsioonid
+    aluse_kast = ekraan.blit(alus, (posX, posY))   # määrab alusele tema mõõtme suuruse kasti ja algpositsioonid
+    pall_kast = ekraan.blit(pall, (posZ, posQ))   # määrab pallile tema mõõtme suuruse kasti ja algpositsioonid
 
 # PALLI KOKKUPUUDE ASJADEGA
     # Kui posZ on suurem kui ekraani ja palli kasti laiuse vahe või kui posZ on väiksem kui null
     if posZ > screenX-pall.get_rect().width or posZ < 0:
         speedZ = -speedZ   # siis speedZ muutub vastupidiseks
-        pygame.mixer.Sound.play(hit_sound)   # ja kostab
+        pygame.mixer.Sound.play(porke_heli)   # ja kostub põrke heli
 
+    # Kui posQ on väiksem kui null
     if posQ < 0:
-        speedQ = -speedQ
-        pygame.mixer.Sound.play(hit_sound)
+        speedQ = -speedQ   # siis speedQ muutub vastupidiseks
+        pygame.mixer.Sound.play(porke_heli)   # ja kostub põrke heli
 
+    # Kui posQ on suurem kui ekraani ja palli kasti laiuse vahe, mis on saja võrra vähendatud
     if posQ > screenY-pall.get_rect().width-100:
-        pygame.mixer.Sound.play(end_sound)
+        pygame.mixer.Sound.play(lopu_heli)   # siis kostub lõpu heli
 
+    # Kui posQ on suurem kui ekraani ja palli kasti laiuse vahe
     if posQ > screenY-pall.get_rect().width:
-        sys.exit()
+        sys.exit()   # siis ekraan sulgub
 
-    font = pygame.font.Font(pygame.font.match_font('Impact'), 20)
-    skoortekst = font.render("Punktid: " + str(skoor), True, [102, 0, 51])
-    ekraan.blit(skoortekst, [530, 20])
+# TEKSTI OMADUSED
+    font = pygame.font.Font(pygame.font.match_font('Impact'), 20)   # määrab fondi ja suuruse
+    skoortekst = font.render("Punktid: " + str(skoor), True, [102, 0, 51])   # määrab teksti ja värvi
+    ekraan.blit(skoortekst, [530, 20])   # määrab asukoha
 
+# PALLI KOKKUPUUDE ALUSEGA
+    # Kui palli kast puutub kokku aluse kastiga ja posQ on suurem kui 0
     if pall_kast.colliderect(aluse_kast) and posQ > 0:
-        speedQ = -speedQ
-        skoor += 1
-        pygame.mixer.Sound.play(log_hit)
+        speedQ = -speedQ   # siis speedQ muutub vastupidiseks
+        skoor += 1   # skoor suureneb ühe võrra
+        pygame.mixer.Sound.play(log_hit)   # ja kostub puute heli
 
-    if pall_kast.colliderect(aluse_kast) and speedQ > 0.2:
-        speedQ = -speedQ
-        skoor -= 1
+    # Kui palli kast puutub kokku aluse kastiga ja speedQ on suurem kui 0.5
+    if pall_kast.colliderect(aluse_kast) and speedQ > 0.5:
+        speedQ = -speedQ   # siis speedQ muutub vastupidiseks
+        skoor -= 1   # ja skoor alaneb ühe võrra
 
-    # klahvivajutus
+# KLAVIVAJUTUS
     if sisend.type == pygame.KEYDOWN:
         if sisend.key == pygame.K_RIGHT:
             directionX = "move_right"
         if sisend.key == pygame.K_LEFT:
             directionX = "move_left"
 
-    # klahvivajutuse vabastamine
+# KLAHVIVAJUTUSE VABASTAMINE
     if sisend.type == pygame.KEYUP:
         if sisend.key == pygame.K_RIGHT or sisend.key == pygame.K_LEFT:
             directionX = 0
 
-    # mängu piirjoonte tuvastamine
+# MÄNGU PIIRJOONTE TUVASTAMINE
     if directionX == "move_left":
         if posX > 5:
             posX -= 15
@@ -107,5 +114,6 @@ while True:
         if posX + 130 < screenX:
             posX += 15
 
+# EKRAANI VÄRSKENDAMINE
     pygame.display.flip()
     ekraan.fill(lRed)
