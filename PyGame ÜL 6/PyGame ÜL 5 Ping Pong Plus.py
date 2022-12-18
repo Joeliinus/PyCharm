@@ -1,7 +1,27 @@
 """
-Ava Harjutus 5 “PingPong” ja salvesta uue nimega
+Lae alla pall ja alus
+Loo uus mäng 640x480 suurusega.Vali heledam taustavärv
+
+Lisa ja animeeri pall
+palli suurus 20x20
+pall liigub sinu valitud kiirusega
+pall põrkub seintest tagasi
+
+Lisa ja animeeri alus
+aluse suurus 120x20
+aluse y - koordinaat on keskkohast allpool.Näiteks screenY / 1.5
+alus liigub vasakule / paremale(vahetab suunda, kui puudub seinu)
+
+Kokkupõrke tuvastamine
+kui pall puutub alust siis muudab suunda.
+kui pall käitub kokkupuutel alusega imelikult, siis lisa tingimusse kontroll,
+et palli y - suund oleks suurem kui null(ballSpeedY > 0)
+
+Boonus
+kui pall puudub alumist äärt, siis saab mängija negatiivse punkti
+kui pall puutub alust, siis saab positiivse punkti
+kuva tulemus mängu ülemises nurgas
 Lisa mängule taustamuusika
-Kontrolli alust klaviatuuri abil x-suunal
 Lisa heliefektid
 """
 
