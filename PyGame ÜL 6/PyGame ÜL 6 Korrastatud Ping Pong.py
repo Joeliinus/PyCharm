@@ -16,8 +16,8 @@ screenX = 640
 screenY = 480
 ekraan = pygame.display.set_mode([screenX, screenY])
 pygame.display.set_caption("Ping Pong")
-lBlue = [153, 204, 255]
-ekraan.fill(lBlue)
+lRed = [255, 204, 204]
+ekraan.fill(lRed)
 skoor = 0
 kell = pygame.time.Clock()
 
@@ -29,8 +29,8 @@ posX = 2
 posY = screenY / 1.5
 speedX = 0.2
 posZ, posQ = 69, 289
-speedZ, speedQ = 7, 7
-alus_kiirus = 2
+speedZ, speedQ = 10, 10
+directionX, directionY = 0, 0
 
 pygame.mixer.music.load('happy.mp3')
 pygame.mixer.music.play(0)
@@ -47,7 +47,6 @@ while True:
         if sisend.type == pygame.QUIT:
             sys.exit()
 
-    posX += speedX
     posZ += speedZ
     posQ += speedQ
 
@@ -73,7 +72,7 @@ while True:
     pall_kast = ekraan.blit(pall, (posZ, posQ))
 
     font = pygame.font.Font(pygame.font.match_font('comic sans'), 16)
-    skoortekst = font.render("Punktid: " + str(skoor), True, [255, 255, 255])
+    skoortekst = font.render("Punktid: " + str(skoor), True, [102, 0, 51])
     ekraan.blit(skoortekst, [535, 20])
 
     if pall_kast.colliderect(aluse_kast) and posQ > 0:
@@ -87,15 +86,25 @@ while True:
     if posQ > 460:
         skoor -= 1
 
-    vajutatud = pygame.key.get_pressed()
-    if vajutatud[pygame.K_LEFT]:
-        speedX = -alus_kiirus
-    elif vajutatud[pygame.K_RIGHT]:
-        speedX = alus_kiirus
-    else:
-        speedX = 0
+    # klahvivajutus
+    if sisend.type == pygame.KEYDOWN:
+        if sisend.key == pygame.K_RIGHT:
+            directionX = "move_right"
+        if sisend.key == pygame.K_LEFT:
+            directionX = "move_left"
 
-    posX += speedX * dt
+    # klahvivajutuse vabastamine
+    if sisend.type == pygame.KEYUP:
+        if sisend.key == pygame.K_RIGHT or sisend.key == pygame.K_LEFT:
+            directionX = 0
+
+    # mängu piirjoonte tuvastamine
+    if directionX == "move_left":
+        if posX > 5:
+            posX -= 15
+    if directionX == "move_right":
+        if posX + 130 < screenX:
+            posX += 15
 
     pygame.display.flip()
-    ekraan.fill(lBlue)
+    ekraan.fill(lRed)
