@@ -21,14 +21,14 @@ ekraan.fill(lRed)
 skoor = 0
 kell = pygame.time.Clock()
 
-pall = pygame.image.load("ball.png")
-pall = pygame.transform.scale(pall, [20, 20])
 alus = pygame.image.load("pad.png")
 alus = pygame.transform.scale(alus, [120, 20])
+pall = pygame.image.load("ball.png")
+pall = pygame.transform.scale(pall, [20, 20])
 posX = 2
 posY = screenY / 1.5
 speedX = 0.2
-posZ, posQ = 69, 289
+posZ, posQ = 99, 289
 speedZ, speedQ = 10, 10
 directionX, directionY = 0, 0
 
@@ -36,7 +36,6 @@ pygame.mixer.music.load('happy.mp3')
 pygame.mixer.music.play(0)
 pygame.mixer.music.set_volume(0.5)
 hit_sound = pygame.mixer.Sound('jump.ogg')
-log_hit = pygame.mixer.Sound('rock-hitting-log.wav')
 end_sound = pygame.mixer.Sound('game-over.wav')
 
 while True:
@@ -52,7 +51,6 @@ while True:
 
     if posX > screenX-alus.get_rect().width or posX < 0:
         speedX = -speedX
-        pygame.mixer.Sound.play(log_hit)
 
     if posZ > screenX-pall.get_rect().width or posZ < 0:
         speedZ = -speedZ
