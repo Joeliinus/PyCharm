@@ -32,6 +32,10 @@ speedZ, speedQ = 0.5, 0.5
 
 pygame.mixer.music.load('happy.mp3')
 pygame.mixer.music.play(0)
+pygame.mixer.music.set_volume(0.5)
+hit_sound = pygame.mixer.Sound('jump.ogg')
+log_hit = pygame.mixer.Sound('rock-hitting-log.wav')
+end_sound = pygame.mixer.Sound('game-over.wav')
 
 while True:
     sisend = pygame.event.poll()
@@ -44,12 +48,19 @@ while True:
 
     if posX > screenX-alus.get_rect().width or posX < 0:
         speedX = -speedX
+        pygame.mixer.Sound.play(log_hit)
 
     if posZ > screenX-pall.get_rect().width or posZ < 0:
         speedZ = -speedZ
+        pygame.mixer.Sound.play(hit_sound)
 
-    if posQ > screenY-pall.get_rect().width or posQ < 0:
+    if posQ < 0:
         speedQ = -speedQ
+        pygame.mixer.Sound.play(hit_sound)
+
+    if posQ > screenY-pall.get_rect().width:
+        speedQ = -speedQ
+        pygame.mixer.Sound.play(end_sound)
 
     aluse_kast = ekraan.blit(alus, (posX, posY))
     pall_kast = ekraan.blit(pall, (posZ, posQ))
