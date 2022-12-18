@@ -20,7 +20,7 @@ posY = screenY / 1.5
 speedX = 0.2
 posZ, posQ = 69, 289
 speedZ, speedQ = 7, 7
-alus_kiirus = 2
+directionX, directionY = 0, 0
 
 pygame.mixer.music.load('happy.mp3')
 pygame.mixer.music.play(0)
@@ -37,7 +37,6 @@ while True:
         if sisend.type == pygame.QUIT:
             sys.exit()
 
-    posX += speedX
     posZ += speedZ
     posQ += speedQ
 
@@ -77,15 +76,25 @@ while True:
     if posQ > 460:
         skoor -= 1
 
-    vajutatud = pygame.key.get_pressed()
-    if vajutatud[pygame.K_LEFT]:
-        speedX = -alus_kiirus
-    elif vajutatud[pygame.K_RIGHT]:
-        speedX = alus_kiirus
-    else:
-        speedX = 0
+        # klahvivajutus
+    if sisend.type == pygame.KEYDOWN:
+        if sisend.key == pygame.K_RIGHT:
+            directionX = "move_right"
+        if sisend.key == pygame.K_LEFT:
+            directionX = "move_left"
 
-    posX += speedX * dt
+        # klahvivajutuse vabastamine
+    if sisend.type == pygame.KEYUP:
+        if sisend.key == pygame.K_RIGHT or sisend.key == pygame.K_LEFT:
+            directionX = 0
+
+    # mängu piirjoonte tuvastamine
+    if directionX == "move_left":
+        if posX > 5:
+            posX -= 12
+    if directionX == "move_right":
+        if posX + 120 < screenX:
+            posX += 12
 
     pygame.display.flip()
     ekraan.fill(lBlue)
