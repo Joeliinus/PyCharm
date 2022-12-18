@@ -41,7 +41,7 @@ end_sound = pygame.mixer.Sound('game-over.wav')
 log_hit = pygame.mixer.Sound('rock-hitting-log.wav')
 
 while True:
-    dt = kell.tick(60)
+    fps = kell.tick(60)
 
     sisend = pygame.event.poll()
     for sisend in pygame.event.get():
