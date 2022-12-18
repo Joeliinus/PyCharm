@@ -12,24 +12,25 @@ import pygame
 import sys
 pygame.init()
 
-screenX = 640
-screenY = 480
-ekraan = pygame.display.set_mode([screenX, screenY])
-pygame.display.set_caption("Ping Pong")
-lRed = [255, 204, 204]
-ekraan.fill(lRed)
-skoor = 0
-kell = pygame.time.Clock()
+# EKRAANI SEADED
+screenX = 640   # laius on 640
+screenY = 480   # Kõrgus on 480
+ekraan = pygame.display.set_mode([screenX, screenY])   # ekraan avab akna määratud laiuse ja kõrgusega
+pygame.display.set_caption("Ping Pong")   # paneb ekraanile pealkirja
+lRed = [255, 204, 204]   # annad lRed-ile väärtuseks värvikoodi
+ekraan.fill(lRed)   # muudad taustavärvi lRed-iks
+skoor = 0   # määrad skoori, algväärtusega 0
+kell = pygame.time.Clock()   #
 
 alus = pygame.image.load("pad.png")
 alus = pygame.transform.scale(alus, [120, 20])
 pall = pygame.image.load("ball.png")
 pall = pygame.transform.scale(pall, [20, 20])
-posX = 2
+posX = 200
 posY = screenY / 1.5
 speedX = 0.2
-posZ, posQ = 99, 289
-speedZ, speedQ = 10, 10
+posZ, posQ = 99, 189
+speedZ, speedQ = 5, 5
 directionX, directionY = 0, 0
 
 pygame.mixer.music.load('happy.mp3')
@@ -37,9 +38,10 @@ pygame.mixer.music.play(0)
 pygame.mixer.music.set_volume(0.5)
 hit_sound = pygame.mixer.Sound('jump.ogg')
 end_sound = pygame.mixer.Sound('game-over.wav')
+log_hit = pygame.mixer.Sound('rock-hitting-log.wav')
 
 while True:
-    dt = kell.tick(30)
+    dt = kell.tick(60)
 
     sisend = pygame.event.poll()
     for sisend in pygame.event.get():
@@ -75,14 +77,11 @@ while True:
 
     if pall_kast.colliderect(aluse_kast) and posQ > 0:
         speedQ = -speedQ
-        skoor += 4
-        pygame.mixer.Sound.play(hit_sound)
+        skoor += 1
+        pygame.mixer.Sound.play(log_hit)
 
     if pall_kast.colliderect(aluse_kast) and speedQ > 0.2:
         speedQ = -speedQ
-        skoor -= 4
-
-    if posQ > 460:
         skoor -= 1
 
     # klahvivajutus
