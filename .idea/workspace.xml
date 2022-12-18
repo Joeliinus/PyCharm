@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637955ae-b964-4cbd-a4de-de2fbbba89c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PyGame ÜL 6/qubodup-cfork-ccby3-jump.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PyGame ÜL 6/game-over.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PyGame ÜL 6/jump.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PyGame ÜL 6/rock-hitting-log.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PyGame ÜL 6/ÜL 6 test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGame ÜL 6/Jump2.bfxrsound" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGame ÜL 6/PyGame ÜL 6 Korrastatud Ping Pong.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGame ÜL 6/PyGame ÜL 6 Korrastatud Ping Pong.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGame ÜL 6/The End.bfxrsound" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGame ÜL 6/qubodup-cfork-ccby3-jump.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +44,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/user/PycharmProjects/PyCharm/PyGame ÜL 6"
+    "last_opened_file_path": "C:/Users/user/PycharmProjects/PyCharm"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -45,6 +54,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\PyCharm" />
       <recent name="C:\Users\user\PycharmProjects\PyCharm\PyGame ÜL 6" />
       <recent name="C:\Users\user\PycharmProjects\desktop-tutorial" />
     </key>
