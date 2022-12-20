@@ -39,6 +39,8 @@ skoor = 0
 skoor2 = 0
 
 auto_heli = pygame.mixer.Sound('niuh.wav')
+start_heli = pygame.mixer.Sound('robot-go.wav')
+pygame.mixer.Sound.play(start_heli)
 
 # kiirus ja asukoht
 posX, posY = 175, 80
