@@ -38,6 +38,8 @@ screen.blit(scoreboard, [245, 66])
 skoor = 0
 skoor2 = 0
 
+auto_heli = pygame.mixer.Sound('niuh.wav')
+
 # kiirus ja asukoht
 posX, posY = 175, 80
 posZ, posQ = 300, 375
@@ -71,11 +73,13 @@ while True:
         posX, posY = 175, -85
     if posY < -84:
         skoor += 1
+        pygame.mixer.Sound.play(auto_heli)
 
     if posM > screenY:
         posN, posM = 425, -85
     if posM < -84:
         skoor2 += 1
+        pygame.mixer.Sound.play(auto_heli)
 
     # graafika kuvamine ekraanil
     pygame.display.flip()
