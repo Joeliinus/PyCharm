@@ -89,6 +89,7 @@ while True:
     if pall_kast.colliderect(aluse_kast) and posQ > 0:
         speedQ = -speedQ
         skoor += 4
+        pygame.mixer.Sound.play(log_hit)
 
     if pall_kast.colliderect(aluse_kast) and speedQ > 0.2:
         speedQ = -speedQ
