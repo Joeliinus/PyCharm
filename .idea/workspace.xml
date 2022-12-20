@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="637955ae-b964-4cbd-a4de-de2fbbba89c5" name="Changes" comment="" />
+    <list default="true" id="637955ae-b964-4cbd-a4de-de2fbbba89c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PyGame ÜL 2/village-theme.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyGame ÜL 2/PyGame ÜL 2 Tekstide ja piltide kasutamine.py" beforeDir="false" afterPath="$PROJECT_DIR$/PyGame ÜL 2/PyGame ÜL 2 Tekstide ja piltide kasutamine.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,9 +103,6 @@
       <module name="desktop-tutorial" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
