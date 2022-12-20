@@ -1,6 +1,10 @@
 import pygame
 pygame.init()
 
+# lisab taustamuusika
+pygame.mixer.music.load('village-theme.wav')
+pygame.mixer.music.play(0)
+
 # määrab ekraani suuruse ning paneb sellele nime
 screen = pygame.display.set_mode([640, 480])
 pygame.display.set_caption("2")
