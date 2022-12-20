@@ -25,7 +25,7 @@ kell = pygame.time.Clock()   # loob kella objekti
 # PILDID JA OMADUSED
 alus = pygame.image.load("pad.png")   # määrab alusele palgi pildi
 alus = pygame.transform.scale(alus, [120, 20])   # muudab aluse suurust
-pall = pygame.image.load("ball.png")   # määrab pallile palli pildi
+pall = pygame.image.load("CATDOG.png")   # määrab pallile palli pildi
 pall = pygame.transform.scale(pall, [20, 20])   # muudab palli suurust
 posX = 200   # määrab posX-i väärtuseks 200
 posY = screenY / 1.5   # määrab posY väärtuseks ekraani lauise jagatud 1.5-ga
