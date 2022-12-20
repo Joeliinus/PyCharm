@@ -95,24 +95,24 @@ while True:
         skoor -= 1   # ja skoor alaneb ühe võrra
 
 # KLAVIVAJUTUS
-    if sisend.type == pygame.KEYDOWN:
-        if sisend.key == pygame.K_RIGHT:
-            directionX = "move_right"
-        if sisend.key == pygame.K_LEFT:
-            directionX = "move_left"
+    if sisend.type == pygame.KEYDOWN:   # kui vajutad klavhi alla
+        if sisend.key == pygame.K_RIGHT:   # ja kui vajutatud klahv on parema noole klav
+            directionX = "move_right"   # siis annab juhiseks paremale liikuda
+        if sisend.key == pygame.K_LEFT:   # kui vajutatud klahv on vasaku noole klav
+            directionX = "move_left"   # siis annab juhiseks vasakule liikuda
 
 # KLAHVIVAJUTUSE VABASTAMINE
-    if sisend.type == pygame.KEYUP:
-        if sisend.key == pygame.K_RIGHT or sisend.key == pygame.K_LEFT:
-            directionX = 0
+    if sisend.type == pygame.KEYUP:   # kui lased klahvi lahti
+        if sisend.key == pygame.K_RIGHT or sisend.key == pygame.K_LEFT:   # ja kui lahti lastud klav on parem või vasak
+            directionX = 0   # siis ei liigu kuhugi
 
 # MÄNGU PIIRJOONTE TUVASTAMINE
-    if directionX == "move_left":
-        if posX > 5:
-            posX -= 15
-    if directionX == "move_right":
-        if posX + 130 < screenX:
-            posX += 15
+    if directionX == "move_left":   # kui juhiseks on vasakule liikuda
+        if posX > 5:   # ja kui posX on väiksem kui 5
+            posX -= 15   # siis posX väheneb 15 võrra
+    if directionX == "move_right":   # kui juhiseks on paremale liikuda
+        if posX + 130 < screenX:   # ja kui posX-i ja 130 summa on väiksem kui screenX
+            posX += 15   # siis posX suureneb 15 võrra
 
 # EKRAANI VÄRSKENDAMINE
     pygame.display.flip()
