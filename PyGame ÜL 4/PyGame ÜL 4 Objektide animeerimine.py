@@ -38,9 +38,11 @@ screen.blit(scoreboard, [245, 66])
 skoor = 0
 skoor2 = 0
 
+# heliefektide lisamine
 auto_heli = pygame.mixer.Sound('niuh.wav')
 start_heli = pygame.mixer.Sound('robot-go.wav')
 pygame.mixer.Sound.play(start_heli)
+pygame.mixer.Sound.play(auto_heli)
 
 # kiirus ja asukoht
 posX, posY = 175, 80
