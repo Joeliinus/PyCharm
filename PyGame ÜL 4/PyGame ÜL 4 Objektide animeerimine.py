@@ -48,7 +48,7 @@ pygame.mixer.Sound.play(auto_heli)
 posX, posY = 175, 80
 posZ, posQ = 300, 375
 posN, posM = 425, 100
-speedY, speedM = 7, 5
+speedY, speedM = 9, 7
 
 # sulgemine hiirega
 while True:
