@@ -78,7 +78,7 @@ while True:
 
 # TEKSTI OMADUSED
     font = pygame.font.Font(pygame.font.match_font('Impact'), 20)
-    skoortekst = font.render("Punktid: " + str(skoor), True, [251, 141, 11])
+    skoortekst = font.render("Punktid: " + str(skoor), True, [251, 141, 0])
     ekraan.blit(skoortekst, [530, 20])
 
 # PALLI KOKKUPUUDE ALUSEGA
