@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="637955ae-b964-4cbd-a4de-de2fbbba89c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/desktop-tutorial.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/desktop-tutorial.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HotelliVärkChatGPT.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -38,6 +38,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/PyCharm/PyGame ÜL 6&quot;,
@@ -54,6 +55,9 @@
       <recent name="C:\Users\user\PycharmProjects\PyCharm\PyGame ÜL 6" />
       <recent name="C:\Users\user\PycharmProjects\PyCharm" />
       <recent name="C:\Users\user\PycharmProjects\desktop-tutorial" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\GitHub\documents\PyCharm" />
     </key>
   </component>
   <component name="RunManager" selected="Python.PyGame ÜL 1 Lumemees">
